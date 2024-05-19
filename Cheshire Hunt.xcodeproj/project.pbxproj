@@ -11,6 +11,12 @@
 		F2BD80312BFA749F004BA829 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BD80302BFA749F004BA829 /* ContentView.swift */; };
 		F2BD80332BFA74A0004BA829 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2BD80322BFA74A0004BA829 /* Assets.xcassets */; };
 		F2BD80362BFA74A0004BA829 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2BD80352BFA74A0004BA829 /* Preview Assets.xcassets */; };
+		F2BD80502BFA7C2A004BA829 /* start.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F2BD804C2BFA7C2A004BA829 /* start.mp3 */; };
+		F2BD80512BFA7C2A004BA829 /* yay.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F2BD804D2BFA7C2A004BA829 /* yay.mp3 */; };
+		F2BD80522BFA7C2A004BA829 /* meow.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F2BD804E2BFA7C2A004BA829 /* meow.mp3 */; };
+		F2BD80532BFA7C2A004BA829 /* song.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F2BD804F2BFA7C2A004BA829 /* song.mp3 */; };
+		F2BD80552BFA7C54004BA829 /* CheshireViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BD80542BFA7C54004BA829 /* CheshireViewModel.swift */; };
+		F2BD80572BFA7C60004BA829 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BD80562BFA7C60004BA829 /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +25,12 @@
 		F2BD80302BFA749F004BA829 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F2BD80322BFA74A0004BA829 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F2BD80352BFA74A0004BA829 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F2BD804C2BFA7C2A004BA829 /* start.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = start.mp3; sourceTree = "<group>"; };
+		F2BD804D2BFA7C2A004BA829 /* yay.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = yay.mp3; sourceTree = "<group>"; };
+		F2BD804E2BFA7C2A004BA829 /* meow.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = meow.mp3; sourceTree = "<group>"; };
+		F2BD804F2BFA7C2A004BA829 /* song.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = song.mp3; sourceTree = "<group>"; };
+		F2BD80542BFA7C54004BA829 /* CheshireViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheshireViewModel.swift; sourceTree = "<group>"; };
+		F2BD80562BFA7C60004BA829 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +63,11 @@
 		F2BD802D2BFA749F004BA829 /* Cheshire Hunt */ = {
 			isa = PBXGroup;
 			children = (
+				F2BD804B2BFA7BFC004BA829 /* Sound */,
 				F2BD802E2BFA749F004BA829 /* Cheshire_HuntApp.swift */,
 				F2BD80302BFA749F004BA829 /* ContentView.swift */,
+				F2BD80542BFA7C54004BA829 /* CheshireViewModel.swift */,
+				F2BD80562BFA7C60004BA829 /* LocationManager.swift */,
 				F2BD80322BFA74A0004BA829 /* Assets.xcassets */,
 				F2BD80342BFA74A0004BA829 /* Preview Content */,
 			);
@@ -65,6 +80,17 @@
 				F2BD80352BFA74A0004BA829 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F2BD804B2BFA7BFC004BA829 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				F2BD804E2BFA7C2A004BA829 /* meow.mp3 */,
+				F2BD804F2BFA7C2A004BA829 /* song.mp3 */,
+				F2BD804C2BFA7C2A004BA829 /* start.mp3 */,
+				F2BD804D2BFA7C2A004BA829 /* yay.mp3 */,
+			);
+			path = Sound;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,8 +151,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2BD80512BFA7C2A004BA829 /* yay.mp3 in Resources */,
+				F2BD80522BFA7C2A004BA829 /* meow.mp3 in Resources */,
 				F2BD80362BFA74A0004BA829 /* Preview Assets.xcassets in Resources */,
+				F2BD80502BFA7C2A004BA829 /* start.mp3 in Resources */,
 				F2BD80332BFA74A0004BA829 /* Assets.xcassets in Resources */,
+				F2BD80532BFA7C2A004BA829 /* song.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,8 +167,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2BD80572BFA7C60004BA829 /* LocationManager.swift in Sources */,
 				F2BD80312BFA749F004BA829 /* ContentView.swift in Sources */,
 				F2BD802F2BFA749F004BA829 /* Cheshire_HuntApp.swift in Sources */,
+				F2BD80552BFA7C54004BA829 /* CheshireViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
