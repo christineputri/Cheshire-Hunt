@@ -19,9 +19,9 @@ class CheshireViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     @Published var showReplay = false
 
     private var locationManager: CLLocationManager = CLLocationManager()
-    private var catLocations: [String: CLLocation] = ["belang": CLLocation(latitude: -6.290945, longitude: 106.627083),
-                                                      "oren": CLLocation(latitude: -6.290935, longitude: 106.627116),
-                                                      "putih": CLLocation(latitude: -6.290913, longitude: 106.627042)]
+    private var catLocations: [String: CLLocation] = ["belang": CLLocation(latitude: -6.302113, longitude: 106.652296),
+                                                      "oren": CLLocation(latitude: -6.302241, longitude: 106.652160),
+                                                      "putih": CLLocation(latitude: -6.302094, longitude: 106.652426)]
     private var startPlayer: AVAudioPlayer?
     private var songPlayer: AVAudioPlayer?
     private var meowPlayer: AVAudioPlayer?
