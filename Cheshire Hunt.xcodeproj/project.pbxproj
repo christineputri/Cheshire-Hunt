@@ -31,7 +31,6 @@
 		F2BD804F2BFA7C2A004BA829 /* song.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = song.mp3; sourceTree = "<group>"; };
 		F2BD80542BFA7C54004BA829 /* CheshireViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheshireViewModel.swift; sourceTree = "<group>"; };
 		F2BD80562BFA7C60004BA829 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
-		F2BD80582BFA7CD4004BA829 /* Cheshire-Hunt-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Cheshire-Hunt-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +63,6 @@
 		F2BD802D2BFA749F004BA829 /* Cheshire Hunt */ = {
 			isa = PBXGroup;
 			children = (
-				F2BD80582BFA7CD4004BA829 /* Cheshire-Hunt-Info.plist */,
 				F2BD804B2BFA7BFC004BA829 /* Sound */,
 				F2BD802E2BFA749F004BA829 /* Cheshire_HuntApp.swift */,
 				F2BD80302BFA749F004BA829 /* ContentView.swift */,
@@ -310,6 +308,10 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Cheshire-Hunt-Info.plist";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Application need your location";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Application need your location";
+				INFOPLIST_KEY_NSLocationUsageDescription = "Application need your location";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Application need your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -340,6 +342,10 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Cheshire-Hunt-Info.plist";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Application need your location";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Application need your location";
+				INFOPLIST_KEY_NSLocationUsageDescription = "Application need your location";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Application need your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
