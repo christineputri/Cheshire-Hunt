@@ -25,6 +25,14 @@ struct ContentView: View {
                     .scaledToFit()
                     .position(x: geometry.size.width / 2, y: geometry.size.height / 2)
                     .edgesIgnoringSafeArea(.all)
+                
+                if let footPosition = viewModel.footPosition {
+                    Image("kaki")
+                        .resizable()
+                        .frame(width: 50, height: 50)
+                        .position(footPosition)
+                }
+                
                 if !gameStarted {
                     Image("rectangle")
                         .resizable()
@@ -120,27 +128,29 @@ struct ContentView: View {
                     }
                 }
             }
-        }
-        .onReceive(timer) { _ in
-            if gameStarted && timeRemaining > 0 && timerIsActive {
-                timeRemaining -= 1
-            } else if timeRemaining == 0 {
-                timerIsActive = false
+            .onReceive(timer) { _ in
+                if gameStarted && timeRemaining > 0 && timerIsActive {
+                    timeRemaining -= 1
+                } else if timeRemaining == 0 {
+                    timerIsActive = false
+                }
             }
-        }
-        .onAppear {
-            viewModel.startLocationUpdates()
-        }
-        .onChange(of: locationManager.latitude) { _ in
-            viewModel.updateCatStates(latitude: locationManager.latitude, longitude: locationManager.longitude)
-        }
-        .onChange(of: locationManager.longitude) { _ in
-            viewModel.updateCatStates(latitude: locationManager.latitude, longitude: locationManager.longitude)
-        }
-        .onChange(of: viewModel.showTrophy) { showTrophy in
-            if showTrophy {
-                timerIsActive = false
-                viewModel.stopSong()
+            .onAppear {
+                viewModel.startLocationUpdates()
+            }
+            .onChange(of: locationManager.latitude) { _ in
+                viewModel.updateCatStates(latitude: locationManager.latitude, longitude: locationManager.longitude)
+                viewModel.updateFootPosition(latitude: locationManager.latitude, longitude: locationManager.longitude, geometry: geometry.size)
+            }
+            .onChange(of: locationManager.longitude) { _ in
+                viewModel.updateCatStates(latitude: locationManager.latitude, longitude: locationManager.longitude)
+                viewModel.updateFootPosition(latitude: locationManager.latitude, longitude: locationManager.longitude, geometry: geometry.size)
+            }
+            .onChange(of: viewModel.showTrophy) { showTrophy in
+                if showTrophy {
+                    timerIsActive = false
+                    viewModel.stopSong()
+                }
             }
         }
     }

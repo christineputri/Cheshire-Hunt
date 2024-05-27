@@ -17,6 +17,7 @@ class CheshireViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     @Published var cats = ["belang": false, "oren": false, "putih": false]
     @Published var showTrophy = false
     @Published var showReplay = false
+    @Published var footPosition: CGPoint?
 
     private var locationManager: CLLocationManager = CLLocationManager()
     private var catLocations: [String: CLLocation] = ["belang": CLLocation(latitude: -6.302113, longitude: 106.652296),
@@ -111,6 +112,7 @@ class CheshireViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
                         "putih": CGPoint(x: 1250, y: 370)]
         stopSong()
         startPlayer?.stop()
+        footPosition = nil
     }
 
     func updateCatStates(latitude: Double, longitude: Double) {
@@ -119,6 +121,23 @@ class CheshireViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
                 catTapped(name: catName)
             }
         }
+    }
+
+    func updateFootPosition(latitude: Double, longitude: Double, geometry: CGSize) {
+        // Convert latitude and longitude to screen position
+        let mapWidth = geometry.width
+        let mapHeight = geometry.height
+        
+        // Assumes that (latitudeMin, longitudeMin) is the top-left and (latitudeMax, longitudeMax) is the bottom-right of the map.
+        let latitudeMin: Double = -6.302500
+        let latitudeMax: Double = -6.301500
+        let longitudeMin: Double = 106.651500
+        let longitudeMax: Double = 106.653000
+
+        let xPos = (longitude - longitudeMin) / (longitudeMax - longitudeMin) * mapWidth
+        let yPos = (latitudeMax - latitude) / (latitudeMax - latitudeMin) * mapHeight
+
+        footPosition = CGPoint(x: xPos, y: yPos)
     }
 }
 
